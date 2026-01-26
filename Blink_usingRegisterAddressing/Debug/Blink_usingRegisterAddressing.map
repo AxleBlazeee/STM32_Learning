@@ -536,17 +536,17 @@ LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_ranges  0x0000000000000000       0x10 ./Src/main.o
  .debug_ranges  0x0000000000000010       0x20 ./Startup/startup_stm32f401ccux.o
 
-.debug_macro    0x0000000000000000      0xaa7
- .debug_macro   0x0000000000000000       0x29 ./Src/main.o
- .debug_macro   0x0000000000000029      0xa7e ./Src/main.o
+.debug_macro    0x0000000000000000      0xaa1
+ .debug_macro   0x0000000000000000       0x23 ./Src/main.o
+ .debug_macro   0x0000000000000023      0xa7e ./Src/main.o
 
 .debug_line     0x0000000000000000       0xf9
  .debug_line    0x0000000000000000       0x75 ./Src/main.o
  .debug_line    0x0000000000000075       0x84 ./Startup/startup_stm32f401ccux.o
 
-.debug_str      0x0000000000000000     0x2dde
- .debug_str     0x0000000000000000     0x2d7f ./Src/main.o
- .debug_str     0x0000000000002d7f       0x5f ./Startup/startup_stm32f401ccux.o
+.debug_str      0x0000000000000000     0x2dbc
+ .debug_str     0x0000000000000000     0x2d5d ./Src/main.o
+ .debug_str     0x0000000000002d5d       0x5f ./Startup/startup_stm32f401ccux.o
 
 .comment        0x0000000000000000       0x50
  .comment       0x0000000000000000       0x50 ./Src/main.o
