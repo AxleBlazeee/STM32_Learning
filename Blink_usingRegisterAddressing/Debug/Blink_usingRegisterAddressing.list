@@ -86,19 +86,19 @@ int main(void)
  80001d4:	b480      	push	{r7}
  80001d6:	b083      	sub	sp, #12
  80001d8:	af00      	add	r7, sp, #0
-	RCC |= (1<<2);
+	RCC |= (1<<2);               //Enables clock to GPIOC
  80001da:	4b19      	ldr	r3, [pc, #100]	; (8000240 <main+0x6c>)
  80001dc:	681b      	ldr	r3, [r3, #0]
  80001de:	4a18      	ldr	r2, [pc, #96]	; (8000240 <main+0x6c>)
  80001e0:	f043 0304 	orr.w	r3, r3, #4
  80001e4:	6013      	str	r3, [r2, #0]
-	GPIOC_MODER |= (1<<26);
+	GPIOC_MODER |= (1<<26);      //To set pin13 in OUTPUT mode
  80001e6:	4b17      	ldr	r3, [pc, #92]	; (8000244 <main+0x70>)
  80001e8:	681b      	ldr	r3, [r3, #0]
  80001ea:	4a16      	ldr	r2, [pc, #88]	; (8000244 <main+0x70>)
  80001ec:	f043 6380 	orr.w	r3, r3, #67108864	; 0x4000000
  80001f0:	6013      	str	r3, [r2, #0]
-	GPIOC_MODER &= ~(1<<27);
+	GPIOC_MODER &= ~(1<<27);     //To set pin13 in OUTPUT mode
  80001f2:	4b14      	ldr	r3, [pc, #80]	; (8000244 <main+0x70>)
  80001f4:	681b      	ldr	r3, [r3, #0]
  80001f6:	4a13      	ldr	r2, [pc, #76]	; (8000244 <main+0x70>)
@@ -106,13 +106,13 @@ int main(void)
  80001fc:	6013      	str	r3, [r2, #0]
 	while(1)
 	{
-		GPIOC_ODR |= (1<<13);
+		GPIOC_ODR |= (1<<13);			//To make pin13 state HIGH
  80001fe:	4b12      	ldr	r3, [pc, #72]	; (8000248 <main+0x74>)
  8000200:	681b      	ldr	r3, [r3, #0]
  8000202:	4a11      	ldr	r2, [pc, #68]	; (8000248 <main+0x74>)
  8000204:	f443 5300 	orr.w	r3, r3, #8192	; 0x2000
  8000208:	6013      	str	r3, [r2, #0]
-		for(int i=0; i<100000; i++){}
+		for(int i=0; i<100000; i++){}	//To give some delay
  800020a:	2300      	movs	r3, #0
  800020c:	607b      	str	r3, [r7, #4]
  800020e:	e002      	b.n	8000216 <main+0x42>
@@ -123,13 +123,13 @@ int main(void)
  8000218:	4a0c      	ldr	r2, [pc, #48]	; (800024c <main+0x78>)
  800021a:	4293      	cmp	r3, r2
  800021c:	ddf8      	ble.n	8000210 <main+0x3c>
-		GPIOC_ODR &= ~(1<<13);
+		GPIOC_ODR &= ~(1<<13);			//To make pin13 state LOW
  800021e:	4b0a      	ldr	r3, [pc, #40]	; (8000248 <main+0x74>)
  8000220:	681b      	ldr	r3, [r3, #0]
  8000222:	4a09      	ldr	r2, [pc, #36]	; (8000248 <main+0x74>)
  8000224:	f423 5300 	bic.w	r3, r3, #8192	; 0x2000
  8000228:	6013      	str	r3, [r2, #0]
-		for(int i=0; i<100000; i++){}
+		for(int i=0; i<100000; i++){}	//To give some delay
  800022a:	2300      	movs	r3, #0
  800022c:	603b      	str	r3, [r7, #0]
  800022e:	e002      	b.n	8000236 <main+0x62>
@@ -140,7 +140,7 @@ int main(void)
  8000238:	4a04      	ldr	r2, [pc, #16]	; (800024c <main+0x78>)
  800023a:	4293      	cmp	r3, r2
  800023c:	ddf8      	ble.n	8000230 <main+0x5c>
-		GPIOC_ODR |= (1<<13);
+		GPIOC_ODR |= (1<<13);			//To make pin13 state HIGH
  800023e:	e7de      	b.n	80001fe <main+0x2a>
  8000240:	40023830 	.word	0x40023830
  8000244:	40020800 	.word	0x40020800
